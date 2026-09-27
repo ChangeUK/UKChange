@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Change UK Member Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{--m-bg:#120b1d;--m-card:#fff;--m-purple:#51227e;--m-purple2:#8a58c1;--m-line:#e9e1f0;--m-muted:#756b7e}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% 0,#6d36a1 0,transparent 32%),linear-gradient(145deg,#160d21,#2a123d 56%,#4a2370);color:#24192c}
+    .member-shell{max-width:1240px;margin:auto;padding:28px}
+    .member-head{display:flex;justify-content:space-between;align-items:center;color:#fff;margin-bottom:20px}
+    .member-head img{width:150px;max-height:92px;object-fit:cover;object-position:center;border-radius:16px;background:white;box-shadow:0 16px 45px #0004}
+    .member-panel{background:#fff;border-radius:28px;padding:28px;box-shadow:0 30px 90px #0005}
+    .login{max-width:500px;margin:70px auto}
+    .login input,.member-panel input,.member-panel textarea,.member-panel select{width:100%;padding:13px 14px;margin:7px 0 12px;border:1px solid #ddd3e5;border-radius:12px;font:inherit}
+    .hidden{display:none!important}
+    .top-row{display:flex;justify-content:space-between;gap:18px;align-items:center}
+    .identity{display:flex;align-items:center;gap:14px}.avatar{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#50217f,#925dca);color:#fff;font-weight:900}
+    .member-badge{display:inline-flex;padding:5px 9px;border-radius:999px;background:#f0e7f8;color:#592987;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0}.stat{padding:16px;border:1px solid var(--m-line);border-radius:18px;background:#fcfaff}.stat b{font-size:25px;display:block;color:#52217e}
+    .tabs{display:flex;gap:8px;overflow:auto;padding:5px 0 16px}.tab{white-space:nowrap;border:1px solid var(--m-line);background:#fff;padding:10px 14px;border-radius:999px;font-weight:800;cursor:pointer}.tab.active{background:#542282;color:#fff;border-color:#542282}
+    .view{display:none}.view.active{display:block;animation:fadeIn .22s ease}@keyframes fadeIn{from{opacity:.15;transform:translateY(5px)}to{opacity:1;transform:none}}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card{border:1px solid var(--m-line);border-radius:20px;padding:20px;background:linear-gradient(180deg,#fff,#fdfbff)}.card h3{margin:0 0 7px}.muted{color:var(--m-muted)}
+    .pin{border-left:5px solid #6e38a2}.card-meta{font-size:12px;font-weight:800;color:#6a5d72;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}.pill{display:inline-flex;padding:5px 8px;border-radius:999px;background:#f0e8f7;color:#5b2b84;font-size:11px;font-weight:900;text-transform:uppercase}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.spacer{flex:1}
+    .event-date{min-width:72px;text-align:center;border-radius:15px;background:#542282;color:#fff;padding:10px}.event-date strong{display:block;font-size:23px}.briefing-body{white-space:pre-wrap;line-height:1.6}.expand{margin-top:10px}.brand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.brand-card{border:1px solid var(--m-line);border-radius:18px;overflow:hidden;background:#faf8fc}.brand-preview{height:150px;display:grid;place-items:center;padding:12px;background:#fff}.brand-preview.dark{background:#32154c}.brand-preview img{max-width:100%;max-height:130px;object-fit:contain}.brand-card .pad{padding:14px}.download-link{display:inline-flex;text-decoration:none;padding:8px 11px;border-radius:10px;background:#542282;color:white;font-weight:800;font-size:13px}
+    .announcement-strip{border-radius:18px;padding:18px;background:linear-gradient(100deg,#4b1e76,#7d45ae);color:#fff;margin-bottom:18px}.announcement-strip h3{margin:0 0 6px}
+    .empty{padding:24px;border:1px dashed #ccbddd;border-radius:18px;color:#786a80;text-align:center}.notice{padding:12px 14px;border-radius:12px;background:#f4eef8;color:#542282;font-weight:700}
+    .feedback-form{max-width:700px}.feedback-item{border-top:1px solid var(--m-line);padding:14px 0}.feedback-item:first-child{border-top:0}
+    @media(max-width:850px){.stats{grid-template-columns:repeat(2,1fr)}.grid2,.grid3,.brand-grid{grid-template-columns:1fr 1fr}.top-row{align-items:flex-start}}
+    @media(max-width:600px){.member-shell{padding:14px}.member-panel{padding:18px;border-radius:20px}.member-head{align-items:flex-start;gap:12px}.member-head img{width:110px}.grid2,.grid3,.brand-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.top-row{display:block}.top-row .btn{margin-top:10px}}
+  </style>
+</head>
+<body>
+<div class="member-shell">
+  <header class="member-head">
+    <div><span class="eyebrow light">CHANGE UK</span><h1>Member Hub</h1><p style="margin:5px 0 0;opacity:.82">News, briefings, events, resources and member tools.</p></div>
+    <img src="logo-banner.png" alt="Change UK">
+  </header>
+
+  <section id="loginPanel" class="member-panel login">
+    <span class="eyebrow">MEMBER SIGN IN</span><h2>Welcome back.</h2>
+    <label>Email<input id="mEmail" type="email" autocomplete="email"></label>
+    <label>Password<input id="mPass" type="password" autocomplete="current-password"></label>
+    <button class="btn primary full" id="mLogin">Sign in</button>
+    <p id="mStatus" class="form-note">Use the account created through the free membership form.</p>
+    <p><a href="index.html">← Back to public website</a></p>
+  </section>
+
+  <section id="dashboard" class="member-panel hidden">
+    <div class="top-row">
+      <div class="identity"><div class="avatar" id="avatar">C</div><div><span class="member-badge" id="memberType">Member</span><h2 id="welcome" style="margin:5px 0 0">Welcome.</h2></div></div>
+      <div class="row"><a class="btn" href="index.html">Public site</a><button class="btn dark" id="logout">Sign out</button></div>
+    </div>
+
+    <div id="pinnedAnnouncement"></div>
+
+    <div class="stats">
+      <div class="stat"><b id="statAnnouncements">0</b><span>Private updates</span></div>
+      <div class="stat"><b id="statEvents">0</b><span>Upcoming events</span></div>
+      <div class="stat"><b id="statBriefings">0</b><span>Policy briefings</span></div>
+      <div class="stat"><b id="statResources">0</b><span>Resources</span></div>
+    </div>
+
+    <nav class="tabs" aria-label="Member sections">
+      <button class="tab active" data-tab="home">Overview</button>
+      <button class="tab" data-tab="announcements">Announcements</button>
+      <button class="tab" data-tab="events">Events</button>
+      <button class="tab" data-tab="briefings">Policy briefings</button>
+      <button class="tab" data-tab="resources">Resource library</button>
+      <button class="tab" data-tab="brand">Brand kit</button>
+      <button class="tab" data-tab="feedback">Ideas & feedback</button>
+      <button class="tab" data-tab="account">My membership</button>
+    </nav>
+
+    <div id="view-home" class="view active">
+      <div class="grid2">
+        <article class="card"><div class="card-meta">Latest private update</div><div id="homeAnnouncement" class="muted">Loading…</div></article>
+        <article class="card"><div class="card-meta">Next member event</div><div id="homeEvent" class="muted">Loading…</div></article>
+        <article class="card"><div class="card-meta">Newest policy briefing</div><div id="homeBriefing" class="muted">Loading…</div></article>
+        <article class="card"><div class="card-meta">Quick actions</div><div class="row"><button class="btn primary jump" data-jump="events">View events</button><button class="btn jump" data-jump="feedback">Send an idea</button><button class="btn jump" data-jump="brand">Open brand kit</button></div></article>
+      </div>
+    </div>
+
+    <div id="view-announcements" class="view"><div class="row"><div><span class="eyebrow">PRIVATE</span><h2>Member announcements</h2></div></div><div id="announcementList" class="grid2"></div></div>
+    <div id="view-events" class="view"><span class="eyebrow">CALENDAR</span><h2>Events</h2><p class="muted">RSVP to member events. Your RSVP is visible only to you and administrators.</p><div id="eventList" class="grid2"></div></div>
+    <div id="view-briefings" class="view"><span class="eyebrow">POLICY</span><h2>Policy briefings</h2><p class="muted">Longer member-only explanations, notes and background for published policy areas.</p><div id="briefingList" class="grid2"></div></div>
+    <div id="view-resources" class="view"><span class="eyebrow">LIBRARY</span><h2>Member resources</h2><div id="resourceList" class="grid3"></div></div>
+
+    <div id="view-brand" class="view">
+      <span class="eyebrow">BRAND KIT</span><h2>Change UK logo library</h2><p class="muted">Download the supplied logo variants for member materials and internal use.</p>
+      <div class="brand-grid">
+        <article class="brand-card"><div class="brand-preview"><img src="logo-primary.png" alt="Primary logo"></div><div class="pad"><h3>Primary logo</h3><p class="muted">Original full artwork.</p><a class="download-link" href="logo-primary.png" download>Download PNG</a></div></article>
+        <article class="brand-card"><div class="brand-preview"><img src="logo-banner.png" alt="Compact logo"></div><div class="pad"><h3>Compact banner</h3><p class="muted">Cropped version for headers.</p><a class="download-link" href="logo-banner.png" download>Download PNG</a></div></article>
+        <article class="brand-card"><div class="brand-preview"><img src="logo-mark.png" alt="Symbol mark"></div><div class="pad"><h3>Union mark</h3><p class="muted">Symbol-only variation.</p><a class="download-link" href="logo-mark.png" download>Download PNG</a></div></article>
+        <article class="brand-card"><div class="brand-preview"><img src="logo-wordmark.png" alt="Change UK wordmark"></div><div class="pad"><h3>Wordmark tile</h3><p class="muted">Change UK name block.</p><a class="download-link" href="logo-wordmark.png" download>Download PNG</a></div></article>
+        <article class="brand-card"><div class="brand-preview dark"><img src="logo-white.png" alt="White logo"></div><div class="pad"><h3>White transparent</h3><p class="muted">For dark purple backgrounds.</p><a class="download-link" href="logo-white.png" download>Download PNG</a></div></article>
+        <article class="brand-card"><div class="brand-preview"><img src="logo-slogan.png" alt="New Politics Real Change"></div><div class="pad"><h3>Slogan strip</h3><p class="muted">“New Politics. Real Change.”</p><a class="download-link" href="logo-slogan.png" download>Download PNG</a></div></article>
+      </div>
+    </div>
+
+    <div id="view-feedback" class="view">
+      <span class="eyebrow">MEMBER VOICE</span><h2>Ideas & feedback</h2><p class="muted">Send a suggestion, question or comment to the site administrators.</p>
+      <div class="feedback-form card"><label>Subject<input id="feedbackSubject" maxlength="100"></label><label>Message<textarea id="feedbackMessage" rows="6" maxlength="3000"></textarea></label><button class="btn primary" id="sendFeedback">Send privately</button><p id="feedbackStatus" class="form-note"></p></div>
+      <h3 style="margin-top:24px">My previous messages</h3><div id="feedbackList"></div>
+    </div>
+
+    <div id="view-account" class="view">
+      <span class="eyebrow">ACCOUNT</span><h2>My membership</h2>
+      <div class="grid2"><article class="card"><h3>Membership details</h3><div id="accountDetails" class="muted">Loading…</div></article><article class="card"><h3>Access level</h3><p id="accessExplain" class="muted"></p><div class="notice">Private member content is protected by Supabase Row Level Security, not just by hiding the page.</div></article></div>
+    </div>
+  </section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="member.js"></script>
+</body></html>

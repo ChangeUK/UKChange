@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#3c176b" />
+  <meta name="description" content="Change UK — New Politics. Real Change. Explore policies, manifesto priorities, representatives and free membership." />
+  <title>Change UK — New Politics. Real Change.</title>
+  <link rel="icon" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=League++Spartan:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#home" aria-label="Change UK home">
+      <img src="logo.png" alt="Change UK logo" />
+      <div><strong>CHANGE UK</strong><span>New Politics. Real Change.</span></div>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav">
+      <a href="#manifesto">Manifesto</a>
+      <a href="#quiz">Policy Quiz</a>
+      <a href="#team">Representation</a>
+      <a href="#news">News</a>
+      <a href="#events">Events</a>
+      <a href="#join" class="nav-join">Join free</a>
+      <a href="member.html" class="nav-member">Member area</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="orb orb-a"></div><div class="orb orb-b"></div>
+      <div class="hero-copy reveal">
+        <span class="eyebrow">CHANGE UK</span>
+        <h1>New Politics.<br><span>Real Change.</span></h1>
+        <p>Explore Change UK’s policies, manifesto priorities, representation and membership programme in one clear, modern platform.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#manifesto">Explore the manifesto</a>
+          <a class="btn glass" href="#join">Join for free</a>
+        </div>
+        <div class="hero-mini"><span>● Live website</span><span>◆ Member access</span><span>◈ Policy quiz</span></div>
+      </div>
+      <div class="hero-card reveal delay-1">
+        <div class="logo-stage"><img src="logo.png" alt="Change UK emblem"></div>
+        <div class="pulse-row"><i></i><span id="heroNotice">A different kind of political website.</span></div>
+      </div>
+    </section>
+
+    <section class="stats-wrap reveal" aria-label="Representation statistics">
+      <article><span class="stat" data-stat="mps">0</span><small>MPs</small></article>
+      <article><span class="stat" data-stat="councillors">0</span><small>Councillors</small></article>
+      <article><span class="stat" data-stat="councils">0</span><small>Councils</small></article>
+      <article><span class="stat" data-stat="members">—</span><small>Members</small></article>
+    </section>
+
+    <section class="section manifesto" id="manifesto">
+      <div class="section-head reveal"><div><span class="eyebrow">MANIFESTO</span><h2>Policy, without the clutter.</h2></div><p>Each card is editable from the private control room, so the public website can stay current without changing the code.</p></div>
+      <div class="policy-grid" id="policyGrid"></div>
+      <div class="manifesto-banner reveal">
+        <div><span class="eyebrow light">FULL MANIFESTO</span><h3>One place for every policy.</h3><p>Policy pages can include detail, status labels, key points and related quiz questions.</p></div>
+        <button class="btn white" id="openManifesto">Open manifesto view</button>
+      </div>
+    </section>
+
+    <section class="section quiz-section" id="quiz">
+      <div class="section-head reveal"><div><span class="eyebrow">POLICY QUIZ</span><h2>Compare your views with the manifesto.</h2></div><p>The quiz compares answers to published Change UK policy positions. It does not tell anyone how to vote.</p></div>
+      <div class="quiz-shell reveal">
+        <div class="quiz-progress"><span id="quizProgress">Question 1 of 4</span><div><i id="quizBar"></i></div></div>
+        <div id="quizBody"></div>
+      </div>
+    </section>
+
+    <section class="section rep-section" id="team">
+      <div class="section-head reveal"><div><span class="eyebrow">REPRESENTATION</span><h2>At Westminster and locally.</h2></div><p>Figures below are controlled from the private dashboard and can be updated whenever representation changes.</p></div>
+      <div class="rep-grid reveal">
+        <div class="rep-card purple"><small>WESTMINSTER</small><strong data-stat="mps">0</strong><span>Members of Parliament</span></div>
+        <div class="rep-card"><small>LOCAL GOVERNMENT</small><strong data-stat="councillors">0</strong><span>Councillors</span></div>
+        <div class="rep-card"><small>COUNCILS</small><strong data-stat="councils">0</strong><span>Councils represented</span></div>
+      </div>
+    </section>
+
+    <section class="section news-section" id="news">
+      <div class="section-head reveal"><div><span class="eyebrow">LATEST</span><h2>Updates from Change UK.</h2></div><p>Publish announcements from the control room. Newest updates appear first.</p></div>
+      <div class="news-grid" id="newsGrid"></div>
+    </section>
+
+
+    <section class="section news-section" id="events">
+      <div class="section-head reveal"><div><span class="eyebrow">EVENTS</span><h2>Public events.</h2></div><p>Public events can be added from the Control Room. Member-only events remain inside the Member Hub.</p></div>
+      <div class="news-grid" id="publicEventsGrid"></div>
+    </section>
+
+    <section class="section join-section" id="join">
+      <div class="join-intro reveal"><span class="eyebrow light">FREE MEMBERSHIP</span><h2>Choose your membership.</h2><p>Joining creates an account with access to member-only briefings, resources, events and participation pages. No payment is taken by this demo build.</p></div>
+      <div class="join-grid">
+        <article class="join-card reveal">
+          <div class="join-icon">18+</div><span class="pill">ADULT MEMBERSHIP</span><h3>Adults</h3><p>For people aged 18 and over.</p>
+          <ul><li>Member dashboard</li><li>Policy briefings</li><li>Events & updates</li><li>Member resources</li></ul>
+          <button class="btn primary full" data-join="adult">Join free — 18+</button>
+        </article>
+        <article class="join-card youth reveal delay-1">
+          <div class="join-icon">12+</div><span class="pill">YOUTH MEMBERSHIP</span><h3>Youth</h3><p>For young members aged 12 and over, with age-appropriate access.</p>
+          <ul><li>Youth member dashboard</li><li>Explainers & resources</li><li>Youth events</li><li>Community participation</li></ul>
+          <button class="btn primary full" data-join="youth">Join free — 12+</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section members-preview reveal">
+      <div><span class="eyebrow">MEMBERS</span><h2>More opens after sign-in.</h2><p>Member-only content is protected with Supabase authentication and database policies.</p></div>
+      <div class="lock-cards"><span>🔒 Briefings</span><span>🔒 Resources</span><span>🔒 Events</span><span>🔒 Member updates</span></div>
+      <a class="btn dark" href="member.html">Open member area</a>
+    </section>
+  </main>
+
+  <footer><div class="footer-brand"><img src="logo.png" alt=""><div><strong>CHANGE UK</strong><span>New Politics. Real Change.</span></div></div><p>© <span id="year"></span> Change UK. Website content is managed through the private control room.</p><div><a href="#manifesto">Manifesto</a><a href="#join">Join</a><a href="member.html">Sign in</a></div></footer>
+
+  <dialog id="joinDialog" class="modal">
+    <button class="modal-x" data-close>×</button>
+    <span class="eyebrow">FREE MEMBERSHIP</span><h2 id="joinTitle">Join Change UK</h2>
+    <form id="joinForm">
+      <input type="hidden" id="membershipType" value="adult">
+      <div class="form-row"><label>First name<input id="firstName" required autocomplete="given-name"></label><label>Last name<input id="lastName" required autocomplete="family-name"></label></div>
+      <label>Email address<input id="email" type="email" required autocomplete="email"></label>
+      <label>Date of birth<input id="dob" type="date" required></label>
+      <label>Password<input id="password" type="password" minlength="8" required autocomplete="new-password"></label>
+      <label class="check"><input type="checkbox" id="eligibility" required><span>I confirm the details are accurate and I meet the eligibility/consent requirements for this membership category.</span></label>
+      <button class="btn primary full" type="submit">Create free account</button>
+      <p class="form-note" id="joinStatus">Supabase must be configured in <code>config.js</code> before live sign-ups work.</p>
+    </form>
+  </dialog>
+
+  <dialog id="manifestoDialog" class="modal manifesto-modal"><button class="modal-x" data-close>×</button><span class="eyebrow">CHANGE UK</span><h2>Manifesto overview</h2><div id="manifestoFull"></div></dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
